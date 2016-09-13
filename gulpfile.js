@@ -1,3 +1,10 @@
+// sudo npm install
+// bower install
+// gulp deploy
+// gulp create-favicon-file
+// gulp favicon
+// gulp
+
 var signature = '                                                               \n' +
     '/*                                                                         \n' +
     '|------------------------------------------------------------------------- \n' +
