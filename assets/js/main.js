@@ -65,8 +65,6 @@ angular.module('aori', ['ui.bootstrap'])
 			if (endangle - startangle > Math.PI)
 				big = 1;
 
-			console.debug('x1: ', x1, 'y1: ', y1, 'x2: ', x2, 'y2: ', y2);
-
 			// Описание svg сектора, с индексом i, с помощью элемента <svg:path>
 			var path = document.createElementNS(svgns, 'path'),
 				d = 'M ' + cx + ',' + cy +
