@@ -1,10 +1,3 @@
-// sudo npm install
-// bower install
-// gulp deploy
-// gulp create-favicon-file
-// gulp favicon
-// gulp
-
 var signature = '                                                               \n' +
     '/*                                                                         \n' +
     '|------------------------------------------------------------------------- \n' +
@@ -207,7 +200,7 @@ gulp.task('copy-fonts', function () {
 
 gulp.task('copy-images', function () {
     return gulp
-    .src(['**', '!master-favicon.png'], {
+    .src(['**', '!assets/images/master-favicon.*'], {
         cwd: 'assets/images/'
     })
     .pipe(newer('assets/images/**', '!assets/images/master-favicon.*'))

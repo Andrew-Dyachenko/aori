@@ -86,6 +86,18 @@ body
 			> a
 				padding-top: 15px
 
+		&:first-child
+			border-radius: 4px 4px 0 0
+			&:hover,
+			&.active
+				border-radius: 4px 0 0 0
+
+		&:last-child
+			border-radius: 0 0 4px 4px
+			&:hover,
+			&.active
+				border-radius: 0 0 0 4px
+
 		&:before,
 		&:after
 			transition: border-left-width .15s ease-out
@@ -180,7 +192,6 @@ body
 		position: relative
 		input
 			border: 1px solid #d6dbde
-			border-radius: 0
 			height: 46px
 			padding-left: 23px
 			padding-right: 33px
@@ -242,11 +253,7 @@ body
 				border-color: $activeBDC
 				color: #fff
 
-			&:first-child
-				border-radius: 0
-
 			&:last-child
-				border-radius: 0
 				border-bottom-color: $BDC
 				&:hover,
 				&.active

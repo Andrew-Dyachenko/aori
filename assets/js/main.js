@@ -1,193 +1,4 @@
 angular.module('aori', ['ui.bootstrap'])
-.controller('navigationController', function ($scope) {
-	$scope.navs = [
-		[
-			{
-				glyphicon: 'glyphicon-inbox',
-				text:'Группы объявлений',
-				readedMessages: 8,
-				unreadMessages: 2
-				
-			},
-			{
-				glyphicon: 'glyphicon-list-alt',
-				text:'Объявления',
-				readedMessages: 48,
-				unreadMessages: 15
-				
-			},
-			{
-				glyphicon: 'glyphicon-text-color',
-				text:'Ключевые слова',
-				readedMessages: 150,
-				unreadMessages: 5
-				
-			}
-		],
-		[
-			{
-				glyphicon: 'glyphicon-stats',
-				text:'Статистика'
-				
-			},
-			{
-				glyphicon: 'glyphicon-cog',
-				text:'Настройки компании'
-				
-			}
-		]
-	];
-})
-
-.controller('moderationController', function ($scope) {
-	$scope.filtered = $scope.claims;
-	$scope.mdrData = {
-		colors: {
-			approved: '#1aa033',
-			moderation: '#eada22',
-			rejected: '#ea2f2f'
-		},
-		claims: [
-			{
-				name: 'Детские брюки',
-				moderators: {
-					facebook: {
-						status: 'rejected',
-						value: 1
-					},
-					vkontakte: {
-						status: 'rejected',
-						value: 1
-					},
-					target: {
-						status: 'approved',
-						value: 1
-					}
-				}
-			},
-			{
-				name: 'Верхняя одежда',
-				moderators: {
-					facebook: {
-						status: 'rejected',
-						value: 1
-					},
-					vkontakte: {
-						status: 'moderation',
-						value: 1
-					},
-					target: {
-						status: 'approved',
-						value: 1
-					}
-				}
-			},
-			{
-				name: 'Летняя одежда',
-				moderators: {
-					facebook: {
-						status: 'rejected',
-						value: 1
-					},
-					vkontakte: {
-						status: 'moderation',
-						value: 1
-					},
-					// target: {
-					// 	status: 'approved',
-					// 	value: 1
-					// }
-				}
-			},
-			{
-				name: 'Детские толстовки',
-				moderators: {
-					facebook: {
-						status: 'rejected',
-						value: 1
-					},
-					vkontakte: {
-						status: 'moderation',
-						value: 1
-					},
-					target: {
-						status: 'approved',
-						value: 1
-					}
-				}
-			},
-			{
-				name: 'Джинсы',
-				moderators: {
-					facebook: {
-						status: 'rejected',
-						value: 1
-					},
-					vkontakte: {
-						status: 'moderation',
-						value: 1
-					},
-					target: {
-						status: 'approved',
-						value: 1
-					}
-				}
-			},
-			{
-				name: 'Джинсовые шорты',
-				moderators: {
-					facebook: {
-						status: 'rejected',
-						value: 1
-					},
-					vkontakte: {
-						status: 'moderation',
-						value: 1
-					},
-					target: {
-						status: 'approved',
-						value: 1
-					}
-				}
-			},
-			{
-				name: 'Обувь для детей',
-				moderators: {
-					facebook: {
-						status: 'rejected',
-						value: 1
-					},
-					vkontakte: {
-						status: 'moderation',
-						value: 1
-					},
-					target: {
-						status: 'approved',
-						value: 1
-					}
-				}
-			},
-			{
-				name: 'Для самых маленьких',
-				moderators: {
-					// facebook: {
-					// 	status: 'rejected',
-					// 	value: 1
-					// },
-					// vkontakte: {
-					// 	status: 'moderation',
-					// 	value: 1
-					// },
-					// target: {
-					// 	status: 'approved',
-					// 	value: 1
-					// }
-				}
-			}
-		]
-	};
-})
-
 .directive('pieChart', function () {
 	return function (scope, element, attributes) {
 		var attrValue = attributes.pieChart,				// Значение атрибута (ordered-list='items')
@@ -268,12 +79,200 @@ angular.module('aori', ['ui.bootstrap'])
 			// Теперь установить атрибуты элемента <svg:path>
 			path.setAttribute('d', d);             		// Установить описание контура
 			path.setAttribute('fill', colors[i]);   	// Установить цвет сектора
-			path.setAttribute('stroke', 'white');   	// Рамка сектора - черная
-			path.setAttribute('stroke-width', '1'); 	// Толщина рамки
+			path.setAttribute('stroke', '#000');   	// Рамка сектора - черная
+			path.setAttribute('stroke-width', '0'); 	// Толщина рамки
 			chart.appendChild(path);              			// Добавить в диаграмму  
 
 			startangle = endangle;
 		}
 		element.append(chart);
+	};
+})
+.controller('navigationController', function ($scope) {
+	$scope.navs = [
+		[
+			{
+				glyphicon: 'glyphicon-inbox',
+				text:'Группы объявлений',
+				readedMessages: 8,
+				unreadMessages: 2
+				
+			},
+			{
+				glyphicon: 'glyphicon-list-alt',
+				text:'Объявления',
+				readedMessages: 48,
+				unreadMessages: 15
+				
+			},
+			{
+				glyphicon: 'glyphicon-text-color',
+				text:'Ключевые слова',
+				readedMessages: 150,
+				unreadMessages: 5
+				
+			}
+		],
+		[
+			{
+				glyphicon: 'glyphicon-stats',
+				text:'Статистика'
+				
+			},
+			{
+				glyphicon: 'glyphicon-cog',
+				text:'Настройки компании'
+				
+			}
+		]
+	];
+})
+
+.controller('moderationController', function ($scope) {
+	$scope.filtered = $scope.claims;
+	$scope.mdrData = {
+		colors: {
+			approved: '#1aa033',
+			moderation: '#eada22',
+			rejected: '#ea2f2f'
+		},
+		claims: [
+			{
+				name: 'Детские брюки',
+				moderators: {
+					facebook: {
+						status: 'rejected',
+						value: 1
+					},
+					vkontakte: {
+						status: 'moderation',
+						value: 1
+					},
+					target: {
+						status: 'approved',
+						value: 1
+					}
+				}
+			},
+			{
+				name: 'Верхняя одежда',
+				moderators: {
+					facebook: {
+						status: 'approved',
+						value: 1
+					},
+					vkontakte: {
+						status: 'rejected',
+						value: 1
+					},
+					target: {
+						status: 'moderation',
+						value: 1
+					}
+				}
+			},
+			{
+				name: 'Летняя одежда',
+				moderators: {
+					facebook: {
+						status: 'approved',
+						value: 1
+					},
+					vkontakte: {
+						status: 'moderation',
+						value: 1
+					},
+					target: {
+						status: 'approved',
+						value: 1
+					}
+				}
+			},
+			{
+				name: 'Детские толстовки',
+				moderators: {
+					facebook: {
+						status: 'rejected',
+						value: 1
+					},
+					vkontakte: {
+						status: 'rejected',
+						value: 1
+					},
+					target: {
+						status: 'approved',
+						value: 1
+					}
+				}
+			},
+			{
+				name: 'Джинсы',
+				moderators: {
+					facebook: {
+						status: 'rejected',
+						value: 1
+					},
+					vkontakte: {
+						status: 'moderation',
+						value: 1
+					},
+					target: {
+						status: 'moderation',
+						value: 1
+					}
+				}
+			},
+			{
+				name: 'Джинсовые шорты',
+				moderators: {
+					facebook: {
+						status: 'rejected',
+						value: 1
+					},
+					vkontakte: {
+						status: 'moderation',
+						value: 1
+					},
+					// target: {
+					// 	status: 'approved',
+					// 	value: 1
+					// }
+				}
+			},
+			{
+				name: 'Обувь для детей',
+				moderators: {
+					facebook: {
+						status: 'approved',
+						value: 1
+					},
+					vkontakte: {
+						status: 'approved',
+						value: 1
+					},
+					target: {
+						status: 'approved',
+						value: 1
+					}
+				}
+			},
+			{
+				name: 'Для самых маленьких',
+				moderators: {
+					// facebook: {
+					// 	status: 'rejected',
+					// 	value: 1
+					// },
+					// vkontakte: {
+					// 	status: 'moderation',
+					// 	value: 1
+					// },
+					// target: {
+					// 	status: 'approved',
+					// 	value: 1
+					// }
+				}
+			}
+		]
 	};
 });
