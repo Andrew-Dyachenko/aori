@@ -21,3 +21,9 @@ assets/images/favicons/
 
 # Игнорировать favicon.jade
 templates/favicon.jade
+
+# Игнорировать faviconData.json
+faviconData.json
+
+# Игнорировать компилированный html
+index.html
