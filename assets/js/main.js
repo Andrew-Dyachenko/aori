@@ -51,18 +51,18 @@ angular.module('aori', ['ui.bootstrap'])
 			{
 				name: 'Детские брюки',
 				moderators: {
-					// facebook: {
-					// 	status: 'rejected',
-					// 	value: 1
-					// },
-					// vkontakte: {
-					// 	status: 'moderation',
-					// 	value: 1
-					// },
-					// target: {
-					// 	status: 'approved',
-					// 	value: 1
-					// }
+					facebook: {
+						status: 'rejected',
+						value: 1
+					},
+					vkontakte: {
+						status: 'rejected',
+						value: 1
+					},
+					target: {
+						status: 'approved',
+						value: 1
+					}
 				}
 			},
 			{
@@ -72,14 +72,14 @@ angular.module('aori', ['ui.bootstrap'])
 						status: 'rejected',
 						value: 1
 					},
-					// vkontakte: {
-					// 	status: 'moderation',
-					// 	value: 1
-					// },
-					// target: {
-					// 	status: 'approved',
-					// 	value: 1
-					// }
+					vkontakte: {
+						status: 'moderation',
+						value: 1
+					},
+					target: {
+						status: 'approved',
+						value: 1
+					}
 				}
 			},
 			{
@@ -170,18 +170,18 @@ angular.module('aori', ['ui.bootstrap'])
 			{
 				name: 'Для самых маленьких',
 				moderators: {
-					facebook: {
-						status: 'rejected',
-						value: 1
-					},
-					vkontakte: {
-						status: 'moderation',
-						value: 1
-					},
-					target: {
-						status: 'approved',
-						value: 1
-					}
+					// facebook: {
+					// 	status: 'rejected',
+					// 	value: 1
+					// },
+					// vkontakte: {
+					// 	status: 'moderation',
+					// 	value: 1
+					// },
+					// target: {
+					// 	status: 'approved',
+					// 	value: 1
+					// }
 				}
 			}
 		]
