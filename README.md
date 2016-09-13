@@ -7,6 +7,9 @@
 Матерьял к заданию №2 находится [тут](https://drive.google.com/file/d/0B8Mb85EeaANiT2U2VmFwU3FRRzA/view?usp=sharing
  "Матерьял к заданию №2.").
 
+##### Тестирование:
+Работоспособность кода проверена в *Chromium 52.0.2743.116* и *Firefox 48.0* под управлением *ОС Linux Ubuntu 16.04 x64*
+
 ## Репозиторий
 Репозиторием выступает **Bitbucket.**  
 `https://bitbucket.org/Andrew_Dyachenko/aori`

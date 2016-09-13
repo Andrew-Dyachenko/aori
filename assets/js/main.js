@@ -31,7 +31,7 @@ angular.module('aori', ['ui.bootstrap'])
 		var chart = document.createElementNS(svgns, 'svg:svg');
 		chart.setAttribute('width', width);
 		chart.setAttribute('height', height);
-		chart.setAttribute('viewBox', '' + (width / -2) + '' + (height / -2) + ' ' + width + ' ' + height);
+		chart.setAttribute('viewBox', '' + (width / -2) + ' ' + (height / -2) + ' ' + width + ' ' + height);
 		/*-------------------------------------------------------------*/
 
 		// Извлечение чисел для диаграммы из объекта
