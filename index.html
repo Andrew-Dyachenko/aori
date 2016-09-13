@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:ng="http://angularjs.org" data-ng-app="aori">
+	<head>
+		<title>Aori</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="Набор рабочих юнит компонентов, представленных как выполненое тестовое задание от копании Аори">
+		<meta name="keywords" content="Aori">
+		<meta name="author" content="Andrew Dyachenko">
+		<link rel="apple-touch-icon" sizes="57x57" href="dist/images/favicon/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="dist/images/favicon/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="dist/images/favicon/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="dist/images/favicon/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="dist/images/favicon/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="dist/images/favicon/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="dist/images/favicon/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="dist/images/favicon/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="dist/images/favicon/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="dist/images/favicon/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="dist/images/favicon/favicon-194x194.png" sizes="194x194">
+		<link rel="icon" type="image/png" href="dist/images/favicon/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="dist/images/favicon/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="dist/images/favicon/manifest.json">
+		<link rel="mask-icon" href="dist/images/favicon/safari-pinned-tab.svg" color="#53b9e9">
+		<link rel="shortcut icon" href="dist/images/favicon/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="dist/images/favicon/mstile-144x144.png">
+		<meta name="msapplication-config" content="dist/images/favicon/browserconfig.xml">
+		<meta name="theme-color" content="#53b9e9">
+		<link rel="stylesheet" href="dist/css/common.css">
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="dist/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pageAlign">
+			<div class="padding">
+				<div class="overflow">
+					<div class="table">
+						<div class="cell">
+							<div class="mainTabsWrapper">
+								<div class="mainTabs">
+									<uib-tabset active="1" justified="true">
+										<uib-tab index="0" heading="Навигация">
+											<div ng-controller="navigationController" class="navigation">
+												<ul ng-repeat="nav in navs" class="nav">
+													<li ng-repeat="key in nav"><a href="#">
+															<div class="icon">
+																<div class="glyphicon {{key.glyphicon}}"></div>
+															</div>
+															<div class="messages">
+																<div class="message badge readed">{{key.readedMessages}}</div>
+																<div class="message badge unread">{{key.unreadMessages}}</div>
+															</div>
+															<div class="text">
+																<div class="overflow">{{key.text}}</div>
+															</div></a></li>
+												</ul>
+											</div>
+										</uib-tab>
+										<uib-tab index="1" heading="Модерация">
+											<div ng-controller="moderationController" class="moderation">
+												<form>
+													<div class="form-group search">
+														<div class="magnifer">
+															<div class="glyphicon glyphicon-search"></div>
+														</div>
+														<div class="counter">{{filtered.length}}</div>
+														<input id="search" type="text" ng-model="search" placeholder="Фильтр" class="form-control">
+													</div>
+												</form>
+												<div class="list-group"><a href="#" ng-repeat="claim in mdrData.claims | filter: {name: search} as filtered" class="list-group-item">
+														<div pie-chart="claim" class="chart"></div>
+														<div class="text">
+															<div class="overflow">{{claim.name}}</div>
+														</div></a></div>
+											</div>
+										</uib-tab>
+									</uib-tabset>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

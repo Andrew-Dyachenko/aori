@@ -1,0 +1,65 @@
+doctype html
+html(lang="ru" xmlns:ng="http://angularjs.org" data-ng-app="aori")
+	head
+		title Aori
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+		meta(name="description", content="Набор рабочих юнит компонентов, представленных как выполненое тестовое задание от копании Аори")
+		meta(name="keywords", content="Aori")
+		meta(name="author", content="Andrew Dyachenko")
+
+		include favicon.jade
+
+		link(rel="stylesheet", href="dist/css/common.css")
+		script(src="bower_components/angular/angular.min.js")
+		script(src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js")
+		script(src="dist/js/main.js")
+
+	body
+		.pageAlign
+			.padding
+				.overflow
+					.table
+						.cell
+							.mainTabsWrapper
+								.mainTabs
+									uib-tabset(active="1" justified='true')
+										uib-tab(index='0' heading='Навигация')
+											.navigation(ng-controller="navigationController")
+												ul.nav(ng-repeat="nav in navs")
+													li(ng-repeat="key in nav")
+														a(href='#')
+															.icon
+																div(class="glyphicon {{key.glyphicon}}")
+
+															.messages
+																.message.badge.readed
+																	| {{key.readedMessages}}
+
+																.message.badge.unread
+																	| {{key.unreadMessages}}
+
+															.text
+																.overflow
+																	| {{key.text}}
+
+										uib-tab(index='1' heading='Модерация')
+											.moderation(ng-controller="moderationController")
+												form
+													.form-group.search
+														.magnifer
+															.glyphicon.glyphicon-search
+
+														.counter
+															| {{filtered.length}}
+
+														input#search.form-control(type="text" ng-model="search" placeholder="Фильтр")
+
+												.list-group
+													a.list-group-item(href='#' ng-repeat="claim in mdrData.claims | filter: {name: search} as filtered")
+														.chart(pie-chart="claim")
+														.text
+															.overflow
+																| {{claim.name}}
+
