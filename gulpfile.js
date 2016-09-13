@@ -64,9 +64,9 @@ var FAVICON_DATA_FILE = 'faviconData.json';
 // package (see the check-for-favicon-update task below).
 gulp.task('generate-favicon', function(done) {
     realFavicon.generateFavicon({
-        masterPicture: 'assets/images/favicon/master-favicon.png',
-        dest: 'assets/images/favicon/',
-        iconsPath: 'dist/images/favicon/',
+        masterPicture: 'assets/images/master-favicon.png',
+        dest: 'assets/images/favicons/',
+        iconsPath: 'dist/images/favicons/',
         design: {
             ios: {
                 pictureAspect: 'backgroundAndMargin',
@@ -200,7 +200,7 @@ gulp.task('copy-fonts', function () {
 
 gulp.task('copy-images', function () {
     return gulp
-    .src(['**'], {
+    .src(['**', '!master-favicon.png'], {
         cwd: 'assets/images/'
     })
     .pipe(newer('assets/images/**', '!assets/images/master-favicon.*'))

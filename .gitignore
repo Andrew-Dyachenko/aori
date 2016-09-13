@@ -14,4 +14,7 @@ dist/
 */logs
 
 # Игнорировать символьные ссылки
-./assets/sass/bootstrap-sass
+assets/sass/bootstrap-sass
+
+# Игнорировать папку с фавиконами
+assets/images/favicons/
